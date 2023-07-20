@@ -9,52 +9,52 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class DocenteTest {
+
     private Docente instance;
-    
+
     public DocenteTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
-        
+
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
         instance = new Docente();
     }
-    
+
     @After
     public void tearDown() {
     }
 
     @Test
-    public void testEstablecerNombres() throws NoSuchFieldException, 
-            IllegalArgumentException, 
+    public void testEstablecerNombres() throws NoSuchFieldException,
+            IllegalArgumentException,
             IllegalAccessException {
         System.out.println("establecerNombres");
-        String nom = "rené";
+        String nom = "RENÉ";
         instance.establecerNombres(nom);
         Field field = instance.getClass().getDeclaredField("nombres");
         field.setAccessible(true);
         assertEquals(field.get(instance), "rené");
     }
-    
+
     @Test
     public void testObtenerNombres() {
         System.out.println("obtenerNombres");
         String nom = "René";
         instance.establecerNombres(nom);
-        assertEquals(instance.obtenerNombres(), "René");
+        assertEquals(instance.obtenerNombres(), "rené");
     }
 
-    
     @Test
-    public void testEstablecerTipo() throws NoSuchFieldException, 
+    public void testEstablecerTipo() throws NoSuchFieldException,
             IllegalArgumentException,
             IllegalAccessException {
         System.out.println("establecerTipo");
@@ -75,7 +75,7 @@ public class DocenteTest {
         instance.establecerTipo(expResult);
         String result = instance.obtenerTipo();
         assertEquals(expResult, result);
-        
+
     }
-    
+
 }
